@@ -11,3 +11,4 @@ Original approach was to use a for loop and pop values off of the original array
 
 ## Solution
 <!-- Embedded whiteboard image -->
+![Alt text](20190708_132054.jpg?raw=true "Title")
