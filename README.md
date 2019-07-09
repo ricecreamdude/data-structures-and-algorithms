@@ -5,3 +5,4 @@ This repo contains a collection of coding challenges that we are completing for 
 ## Table of Contents
 
 [Array Reversal](/challenges/array_reverse/)
+[Array Shifted](/challenges/array_shifted/)
