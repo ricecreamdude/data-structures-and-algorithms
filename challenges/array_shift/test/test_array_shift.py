@@ -1,9 +1,9 @@
-
 #Import the function from the application
 from app.array_shift import array_shift
 
 #First assert that the function you are importing exists
-
+def test_exists():
+  assert array_shift
 #Then, begin testing the function with various test cases 
 def test_should_return_list():
   actual = array_shift([1], 1)
