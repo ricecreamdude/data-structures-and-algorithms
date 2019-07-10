@@ -13,4 +13,4 @@ Space Complexity = 1
 
 ## Solution
 <!-- Embedded whiteboard image -->
-![Alt text](arrayShift.jpg?raw=true "Title")
+![Alt text](binary_search.jpg?raw=true "Title")
