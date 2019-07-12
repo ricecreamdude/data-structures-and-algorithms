@@ -2,17 +2,11 @@ from app.linked_list import LinkedList, Node
 
 #Can successfully instantiate an empty linked list
 def test_linked_list_init():  
-
   assert LinkedList
 
-
-  
-
-# def test_linked_list_create_node():
-
 # Can properly insert into the linked list
-
-def test_ll_insert():
+# Can properly insert multiple nodes into the linked list
+def test_ll_insert_three_nodes():
 
   ll = LinkedList()
   ll.insertNode('test')
@@ -22,11 +16,49 @@ def test_ll_insert():
   assert ll.head.value == 'wow'
   assert ll.head.next.value == 'a'
   assert ll.head.next.next.value == 'test' 
-  
+  assert ll.head.next.next.next is None
 
+# Will return true when finding a value within the linked list that exists
+# def test_ll_return_value_exists():
 
+#   ll = LinkedList()
 
+#   ll.insertNode('SestTtring')
+#   ll.insertNode('testString')
+#   ll.insertNode('stringTest')
+#   ll.insertNode('gnirtStset')
 
+#   assert ll.valueExists('testString') is True
+
+def test_value_exists_returns_true_for_null():
+
+  ll = LinkedList()
+
+  ll.insertNode('stringTest')
+
+  assert ll.valueExists(ll.head) is True
+
+# Will return false when searching for a value in the linked list that does not exist
+def test_value_exists_returns_true_for_match():
+
+  ll = LinkedList()
+
+  ll.insertNode('stringTest')
+  ll.insertNode('stringaTest2')
+  ll.insertNode('stri2ngTest3')
+  ll.insertNode('strin5dgTest5')
+
+  assert ll.valueExists(ll.head, 'stringTest') == True
+
+def test_value_exists_no_match_returns_false():
+  ll = LinkedList()
+
+  ll.insertNode('SestTtring')
+  ll.insertNode('testString')
+  ll.insertNode('stringTest')
+  ll.insertNode('gnirtStset')
+
+  assert ll.valueExists(ll.head, 'potato') is False
 
 def test_node_init():
 
@@ -39,9 +71,15 @@ def test_node_has_given_value():
   assert newNode.value == 'potato'
   assert newNode.next is None
 
-
-# The head property will properly point to the first node in the linked list
-# Can properly insert multiple nodes into the linked list
-# Will return true when finding a value within the linked list that exists
-# Will return false when searching for a value in the linked list that does not exist
 # Can properly return a collection of all the values that exist in the linked list
+def test_ll_return_all_strings():
+
+  ll = LinkedList()
+
+  response = "The list contains My Hero Academia, Black Mirror, and Game of Thrones."
+
+  ll.insertNode('Game of Thrones')
+  ll.insertNode('Black Mirror')
+  ll.insertNode('My Hero Academia')
+
+  assert ll.concatValues(ll.head) == response   
