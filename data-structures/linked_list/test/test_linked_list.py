@@ -82,4 +82,4 @@ def test_ll_return_all_strings():
   ll.insertNode('Black Mirror')
   ll.insertNode('My Hero Academia')
 
-  assert ll.concatValues(ll.head) == response   
+  assert ll.__str__(ll.head) == response   

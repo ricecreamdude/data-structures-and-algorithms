@@ -26,13 +26,13 @@ class LinkedList():
       return 'Error with query'
 
 
-  def concatValues(self, node, str=''):
+  def __str__(self, node, str=''):
 
     if(node.next):
       if(node == self.head):
         str += "The list contains "
       str += f"{node.value}, "
-      return self.concatValues(node.next, str)
+      return self.__str__(node.next, str)
     if(node.next == None):
       str += f"and {node.value}."
       return str
