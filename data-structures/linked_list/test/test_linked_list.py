@@ -107,6 +107,7 @@ def test_append_adds_single_node():
 
   assert ll.__str__() == 'The list contains apple, and zebra.'
 
+# Can successfully add multiple nodes to the end of a linked list
 # def test_append_adds_many_nodes():
 def test_append_adds_many_nodes():
 
@@ -115,13 +116,67 @@ def test_append_adds_many_nodes():
   ll.append('apple')
   ll.append('buffalo')
   ll.append('cat') 
+  ll.append('dog')
 
   actual = ll.__str__()
-  expected = 'The list contains apple, buffalo, and cat.'
+  expected = 'The list contains apple, buffalo, cat, and dog.'
   assert actual == expected
 
-# Can successfully add multiple nodes to the end of a linked list
+
 # Can successfully insert a node before a node located i the middle of a linked list
+def test_insert_before_init():
+  ll = LinkedList()
+  assert ll.insertBefore
+
+def test_insert_node_before_middle():
+  ll = LinkedList()
+
+  ll.insertNode('apple')
+  ll.append('buffalo')
+  ll.append('cat') 
+
+  ll.insertBefore('dog', 'cat')
+
+  assert   ll.__str__() == 'The list contains apple, buffalo, dog, and cat.'
+
+# def test_insert_node_not_found():
+
 # Can successfully insert a node before the first node of a linked list
+def test_insert_node_before_first_node():
+  ll = LinkedList()
+
+  ll.append('apple')
+
+  ll.insertBefore('dog', 'apple')
+
+  assert ll.__str__() == 'The list contains dog, and apple.'
 # Can successfully insert after a node in the middle of the linked list
+def test_insert_after_init():
+  ll = LinkedList()
+  assert ll.insertAfter
+
+def test_insert_node_after_i():
+  ll = LinkedList()
+
+  ll.append('apple')
+  ll.append('buffalo')
+  ll.append('cat') 
+  ll.append('dog')
+
+  ll.insertAfter('elephant', 'cat')
+
+  assert ll.__str__() == 'The list contains apple, buffalo, cat, elephant, and dog.' 
+  
 # Can successfully insert a node after the last node of the linked list
+
+def test_insert_node_at_end():
+  ll = LinkedList()
+
+  ll.append('apple')
+  ll.append('buffalo')
+  ll.append('cat') 
+  ll.append('dog')
+
+  ll.insertAfter('elephant', 'dog')
+
+  assert ll.__str__() == 'The list contains apple, buffalo, cat, dog, and elephant.' 

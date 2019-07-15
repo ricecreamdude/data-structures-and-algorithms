@@ -61,4 +61,51 @@ class LinkedList():
     if (current.next == None):
       current.next = Node(newNodeValue) 
       return 
+
     return self.append(newNodeValue, current.next)
+
+  def insertBefore(self, newNodeVal, searchVal, curNode=None):
+
+    current = curNode or self.head
+    next = current.next
+
+    if current.value == searchVal:
+      newNode = Node(newNodeVal)
+      newNode.next = self.head
+      self.head = newNode
+      return
+
+    if next.value == searchVal:
+      newNode = Node(newNodeVal)
+      current.next = newNode
+      newNode.next = next
+      return
+
+    return self.insertBefore(newNodeVal, searchVal, next)
+
+  def insertAfter(self, newNodeVal, searchVal, curNode=None):
+    
+    current = curNode or self.head
+    next = current.next or None
+
+    if searchVal == current.value:
+      newNode = Node(newNodeVal)
+      current.next = newNode
+      newNode.next = next
+      return
+  
+    return self.insertAfter(newNodeVal, searchVal, next)
+
+
+
+#Testing area
+if __name__ == "__main__":
+    ll = LinkedList()
+
+    ll.append('apple')
+    ll.append('buffalo')
+    ll.append('cat')
+ 
+
+    ll.insertBefore('dog', 'buffalo')
+
