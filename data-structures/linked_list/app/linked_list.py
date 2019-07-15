@@ -1,3 +1,11 @@
+class Node():
+
+  def __init__(self, value, next=None):
+    self.test = 'test'
+    self.value = value
+    self.next = next
+  # return 'Node'
+
 class LinkedList():
 
   def __init__(self):
@@ -21,29 +29,36 @@ class LinkedList():
       node = node.next
       return self.valueExists(node, q)
 
-
     else:
       return 'Error with query'
 
 
-  def __str__(self, node, str=''):
+  def __str__(self, node=None, str=''):
+
+    node = node or self.head
+
+    if (node == None):
+      return 'This list is empty'
 
     if(node.next):
       if(node == self.head):
         str += "The list contains "
       str += f"{node.value}, "
       return self.__str__(node.next, str)
+
     if(node.next == None):
       str += f"and {node.value}."
       return str
 
+  def append(self, newNodeValue, cur=None):
 
+    if self.head == None:
+      self.insertNode( newNodeValue ) 
+      return
 
-class Node():
+    current = cur or self.head
 
-  def __init__(self, value, next=None):
-    self.test = 'test'
-    self.value = value
-    self.next = next
-
-  # return 'Node'
+    if (current.next == None):
+      current.next = Node(newNodeValue) 
+      return 
+    return self.append(newNodeValue, current.next)

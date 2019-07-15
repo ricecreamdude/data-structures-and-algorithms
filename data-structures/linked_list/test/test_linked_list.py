@@ -1,4 +1,4 @@
-from app.linked_list import LinkedList, Node
+from app.linked_list import *
 
 #Can successfully instantiate an empty linked list
 def test_linked_list_init():  
@@ -33,7 +33,6 @@ def test_ll_insert_three_nodes():
 def test_value_exists_returns_true_for_null():
 
   ll = LinkedList()
-
   ll.insertNode('stringTest')
 
   assert ll.valueExists(ll.head) is True
@@ -82,4 +81,47 @@ def test_ll_return_all_strings():
   ll.insertNode('Black Mirror')
   ll.insertNode('My Hero Academia')
 
-  assert ll.__str__(ll.head) == response   
+  assert ll.__str__() == response   
+
+
+##########################################
+#                                        #
+#             Insertion Tests            #
+#                                        #
+##########################################
+
+
+# Can successfully add a node to the end of the linked list
+
+def test_append_init():
+
+  ll = LinkedList()
+  assert ll.append
+
+def test_append_adds_single_node():
+
+  ll = LinkedList()
+  
+  ll.insertNode('apple')
+  ll.append('zebra')
+
+  assert ll.__str__() == 'The list contains apple, and zebra.'
+
+# def test_append_adds_many_nodes():
+def test_append_adds_many_nodes():
+
+  ll = LinkedList()
+
+  ll.append('apple')
+  ll.append('buffalo')
+  ll.append('cat') 
+
+  actual = ll.__str__()
+  expected = 'The list contains apple, buffalo, and cat.'
+  assert actual == expected
+
+# Can successfully add multiple nodes to the end of a linked list
+# Can successfully insert a node before a node located i the middle of a linked list
+# Can successfully insert a node before the first node of a linked list
+# Can successfully insert after a node in the middle of the linked list
+# Can successfully insert a node after the last node of the linked list

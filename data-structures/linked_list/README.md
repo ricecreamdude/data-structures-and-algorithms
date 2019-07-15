@@ -10,6 +10,15 @@ Create these methods recursively!
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 Original approach is to use recursive methods to use solve for string concatenation and for value parsing.  
 
+Big O of:
+  Insert
+    O(1)
+  Search
+    O(N)
+  __str__
+    O(N)
+Time Complexity
+
 ## Solution
 <!-- Embedded whiteboard image -->
 See code
