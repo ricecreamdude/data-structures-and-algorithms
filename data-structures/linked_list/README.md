@@ -26,4 +26,4 @@ Time Complexity
 
 ## Solution
 <!-- Embedded whiteboard image -->
-See code
+![Image of Day2 Board](/ll_day2.jpg)
