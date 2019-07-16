@@ -81,7 +81,82 @@ def test_ll_return_all_strings():
   ll.insertNode('Black Mirror')
   ll.insertNode('My Hero Academia')
 
-  assert ll.__str__() == response   
+  assert ll.__str__(ll.head) == response   
+
+# Unit Tests
+
+def test_kth_from_end_init():
+
+  ll = LinkedList()
+  
+  assert ll.kthFromEnd
+
+def test_kth_from_end_return_length():
+
+  ll = LinkedList()
+
+  ll.insertNode('Game of Thrones')
+  ll.insertNode('Black Mirror')
+  ll.insertNode('My Hero Academia')  
+  ll.insertNode('Demon Slayer')
+  ll.insertNode('Stranger Things')
+  ll.insertNode('YouTube')  
+
+  assert ll.kthFromEnd(3) == "My Hero Academia"
+# Where k is greater than the length of the linked list
+def test_kth_from_end_k_longer_than_list():
+
+  ll = LinkedList()
+
+  ll.insertNode('Game of Thrones')
+  ll.insertNode('Black Mirror')
+  ll.insertNode('My Hero Academia')  
+  ll.insertNode('Demon Slayer')
+  ll.insertNode('Stranger Things')
+  ll.insertNode('YouTube')  
+
+  assert ll.kthFromEnd(7) == "Too long"
+
+# Where k and the length of the list are the same
+def test_kth_from_end_k_same_length_as_list():
+
+  ll = LinkedList()
+
+  ll.insertNode('Game of Thrones')
+  ll.insertNode('Black Mirror')
+  ll.insertNode('My Hero Academia')  
+  ll.insertNode('Demon Slayer')
+  ll.insertNode('Stranger Things')
+  ll.insertNode('YouTube')  
+
+  assert ll.kthFromEnd(6) == "YouTube"
+
+# Where k is not a positive integer
+def test_kth_from_end_k_same_length_as_list():
+
+  ll = LinkedList()
+
+  ll.insertNode('Game of Thrones')
+  ll.insertNode('Black Mirror')
+  ll.insertNode('My Hero Academia')  
+  ll.insertNode('Demon Slayer')
+  ll.insertNode('Stranger Things')
+  ll.insertNode('YouTube')  
+
+  assert ll.kthFromEnd(-1) == 'Cannot search for a negative number.'
+
+# Where the linked list is of a size 1
+
+def test_kth_from_end_list_length_one():
+
+  ll = LinkedList()
+
+  ll.insertNode('Game of Thrones')
+
+  assert ll.kthFromEnd(0) == 'Game of Thrones'
+
+
+# “Happy Path” where k is not at the end, but somewhere in the middle of the linked list
 
 
 ##########################################
@@ -180,3 +255,4 @@ def test_insert_node_at_end():
   ll.insertAfter('elephant', 'dog')
 
   assert ll.__str__() == 'The list contains apple, buffalo, cat, dog, and elephant.' 
+
