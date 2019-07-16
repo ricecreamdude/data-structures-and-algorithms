@@ -32,12 +32,43 @@ class LinkedList():
       if(node == self.head):
         str += "The list contains "
       str += f"{node.value}, "
-      return self.__str__(node.next, str)
+      return self.__str__(node.next, str) 
     if(node.next == None):
       str += f"and {node.value}."
       return str
 
+  def kthFromEnd(self, k):
 
+    length = 0
+    current = self.head
+    foundEnd = False
+
+    if k < 0:
+      return 'Cannot search for a negative number.'
+
+    ## returns the length of the list
+    while foundEnd == False:
+      length += 1
+      if  current.next == None:
+        foundEnd = True
+        break
+      current = current.next
+
+    if length < k:
+      return 'Too long'
+
+    if length == 1 and current.next == None:
+      return current.value
+
+    diffCounter = 0
+    diff = length - k
+    current = self.head
+
+    while diffCounter < diff:
+      diffCounter += 1
+      current = current.next
+
+    return current.value
 
 class Node():
 
