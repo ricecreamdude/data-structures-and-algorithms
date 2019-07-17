@@ -131,8 +131,6 @@ class LinkedList():
   
     return self.insertAfter(newNodeVal, searchVal, next)
 
-
-
 #Testing area
 if __name__ == "__main__":
     ll = LinkedList()
@@ -143,4 +141,3 @@ if __name__ == "__main__":
  
 
     ll.insertBefore('dog', 'buffalo')
-

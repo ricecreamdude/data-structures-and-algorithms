@@ -5,6 +5,8 @@ Added the following methods:
   Append
   Insert Before
   Insert After
+  Find Kth before end
+
 
 ## Challenge
 Create these methods recursively!
@@ -22,8 +24,18 @@ Big O of:
     O(N)
   __str__
     O(N)
+  Append
+    O(N)
+  Insert Before
+    O(N)
+  Insert After
+    O(N)
+  Find Kth before end
+    O(N)
 Time Complexity
 
 ## Solution
 <!-- Embedded whiteboard image -->
 ![Image of Day2 Board](/ll_day2.jpg)
+
+![Kth from End](/ll_day3.jpg)
