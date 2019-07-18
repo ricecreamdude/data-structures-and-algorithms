@@ -131,13 +131,41 @@ class LinkedList():
   
     return self.insertAfter(newNodeVal, searchVal, next)
 
+#Merge
+
+  def merge(self, listTwo):
+    
+    currentOne = self.head
+    currentTwo = listTwo.head
+
+    while (currentOne.next and currentTwo.next):
+      pointerOne = currentOne.next
+      pointerTwo = currentTwo.next
+
+      currentOne.next = currentTwo
+      currentTwo.next = pointerOne
+      pointerOne.next = pointerTwo
+
+      currentOne = pointerOne
+      currentTwo = pointerTwo
+
+    return self.__str__()
+
 #Testing area
 if __name__ == "__main__":
-    ll = LinkedList()
 
-    ll.append('apple')
-    ll.append('buffalo')
-    ll.append('cat')
- 
+    one = LinkedList()
+    two = LinkedList()
 
-    ll.insertBefore('dog', 'buffalo')
+    one.append('a')
+    one.append('b')
+    one.append('c')
+
+    two.append(1)
+    two.append(2)
+    two.append(3) 
+
+    one.merge(two)
+
+    print( one.__str__() )
+    
