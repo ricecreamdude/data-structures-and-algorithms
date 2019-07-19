@@ -151,6 +151,36 @@ class LinkedList():
 
     return self.__str__()
 
+#reverse
+  def reverse(self, list):
+
+    previous = null
+    current = self.head
+    next = self.head.next
+
+    endFlag = False 
+
+    while endFlag == False:
+      if next.next == None:
+        endFlag = True
+        self.head = current
+        current.next = previous
+      current.next = previous
+      previous = current
+      current = next
+      next = next.next
+
+    return self.head
+
+#palindrome
+  @staticmethod
+  def palindrome(list):
+    o = list.head
+    r = list.reverse
+  
+  
+
+
 #Testing area
 if __name__ == "__main__":
 
