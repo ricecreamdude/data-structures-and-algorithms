@@ -1,3 +1,5 @@
+from .stack.stack import Stack
+
 class Stack:
   def __init__(self):
     self.head = None
