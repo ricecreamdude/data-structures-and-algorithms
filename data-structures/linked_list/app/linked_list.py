@@ -151,6 +151,59 @@ class LinkedList():
 
     return self.__str__()
 
+#reverse
+  def reverse(self, list):
+
+    previous = null
+    current = self.head
+    next = self.head.next
+
+    endFlag = False 
+
+    while endFlag == False:
+      if next.next == None:
+        endFlag = True
+        self.head = current
+        current.next = previous
+      current.next = previous
+      previous = current
+      current = next
+      next = next.next
+
+    return self.head
+
+#palindrome
+  @staticmethod
+  def palindrome(list):
+    o = list.head
+    r = list.reverse
+  
+  def kth_from_end(self,k):
+
+    def visit(k,node):
+
+      if not node:
+        return {
+          'value':None
+          'distance':0  
+        }    
+
+      report = visit(k,node.next)
+
+      report['distance'] += 1
+
+      if report['distance'] == k:
+        report['value'] = node.value
+
+      return report
+
+  final_report = visit(k,self.head)
+
+  if final_report['distance'] = k:
+    raise ValueError('out of range')
+
+  return final_report['value']
+
 #Testing area
 if __name__ == "__main__":
 
