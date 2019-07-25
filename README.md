@@ -6,3 +6,4 @@ This repo contains a collection of coding challenges that we are completing for 
 
 [Array Reversal](/challenges/array_reverse/)
 [Array Shifted](/challenges/array_shifted/)
+[Multi-Bracket Validation](/challenges/multi_bracket_validation/)

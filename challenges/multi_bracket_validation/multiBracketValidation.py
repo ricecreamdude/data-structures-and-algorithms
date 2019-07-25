@@ -15,43 +15,61 @@ class Stack:
     return 'Stack is empty'
 
   def push(self, value):
-    #LIFO
     newNode = Node(value)
-    
     next = self.head
     newNode.next = next 
     self.head = newNode
-
     return
-
 
 
 class MultiBracketValidation(Stack):
 
+  def __init__(self):
+    self.expected = None
+    self.head = None
+
   def validate(self, string):
-    # list = list(string)
-    #Create a node based on inputted string
-
-    #Check for string type, if open bracket
-    #
-    if string == '[':
-      self.push( SquareBracket() )
-
-    if string == '{':
-      self.push( CurlyBracket() )
-
-    if string == '(':
-      self.push( CircleBracket() )
-
-    return 
-
-  # def insertNode(self, bracket):
     """
-    input (bracket)
-    Takes in a single string as brack type and returns a bracket objects based on provided string
-    return [CircleBracket or SquareBracket or CurlyBracket]
+    Input: String 
+    This method takes in a string and validates it against the bracket criteria detailed in the readme.
+    If the provided string leaves the validator with an empty stack, return True.
+    All else returns false.
+
+    Output: True, False
     """
-    # return
+    charList = list(string)
+
+    for c in charList:
+    #Opening brackets - Adding nodes to the stack
+      if c == '[':
+        self.push(SquareBracket())
+        continue
+      if c == '{':
+        self.push(CurlyBracket())
+        continue
+      if c == '(':
+        self.push(CircleBracket())
+        continue
+
+      #Closing brackets - removing nodes from stack
+      if self.head:
+        if c == self.head.value.close:
+          self.pop()
+          continue
+
+        if c != self.head.value.close:
+          return False
+          break
+      else: 
+        return False
+        break
+    #Head must be empty in order for algorithm to complete correctly
+    if self.head == None:
+      return True
+
+    #Program defaults to FALSE if provided string does not match the method criteria
+    print('Head is not empty')
+    return False
     
 class Node:
   def __init__(self, value):
@@ -73,15 +91,8 @@ class CurlyBracket:
     self.open = '{'
     self.close = '}'
 
-
-
-
-
 if __name__ == '__main__':
   mbv = MultiBracketValidation()
-  mbv.validate('[')
-  mbv.validate('(')
-  mbv.validate('{')
-
-  print('test:', mbv.peek().open)
-  # print('test:', mbv.head.value.open)
+  print('test one:', mbv.validate('[][][]') )
+  print('test two:', mbv.validate('[](){}') )
+  print('test three:', mbv.validate('[[]{{[[]}}]') )
