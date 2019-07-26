@@ -70,7 +70,7 @@ class MultiBracketValidation(Stack):
     #Program defaults to FALSE if provided string does not match the method criteria
     print('Head is not empty')
     return False
-    
+
 class Node:
   def __init__(self, value):
     self.value = value
@@ -96,3 +96,32 @@ if __name__ == '__main__':
   print('test one:', mbv.validate('[][][]') )
   print('test two:', mbv.validate('[](){}') )
   print('test three:', mbv.validate('[[]{{[[]}}]') )
+
+##########################
+#     In class demo:     #
+##########################
+closers = {
+  ')':'('
+}
+
+#string = 'string'
+#print(string[2])
+# => 'r'
+
+openers = ['{', '(', '[']
+
+check_brackets(txt):
+  stack = Stack()
+
+  for char in txt:
+    if char in openers:
+      stack.push(char)
+      continue
+    if char in closers:
+      if stack.peek() != closers[char]:
+        return False
+      stack.pop()
+
+  return stack.is_empty()
+
+
