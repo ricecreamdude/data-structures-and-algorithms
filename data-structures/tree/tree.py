@@ -65,8 +65,7 @@ class BinaryTree():
 
     return l
 
-if __name__ == "__main__":
-  print('Hello from Tree')
+
 
 class BinarySearchTree(BinaryTree):
   def __init__(self):
@@ -98,12 +97,27 @@ class BinarySearchTree(BinaryTree):
 
     walk(self.root)
 
-  def contains():
+  def contains(self, value):
     """
       Accepts a value and returns a boolean indicating 
       whether or not the value is in the tree at least once.
     """
-    pass
+    
+    def walk(node):
+      if value == node.value:
+        return True
+
+      if value > node.value:
+        if not node.right:
+          return False
+        return walk(node.right)
+
+      if value < node.value:
+        if not node.left:
+          return False
+        return walk(node.left)
+
+    return walk(self.root)
 
 class Node():
   def __init__(self, value):
@@ -114,16 +128,13 @@ class Node():
 if "__main__" == __name__:
   bst = BinarySearchTree()
 
-  bst.add(30)
-  bst.add(35)
-  bst.add(40)
-  bst.add(25)
-  bst.add(20)
+  bst.add(10)
   bst.add(15)
-  bst.add(45)
-  bst.add(50)
+  bst.add(5)
+  bst.add(8)
+  bst.add(3)
+  bst.add(12)
+  bst.add(17)
 
-
-
-  print( bst.inOrder() )
+  print(bst.contains(10))
 

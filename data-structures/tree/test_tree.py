@@ -101,3 +101,22 @@ def test_postorder_traversal():
   l = bst.postOrder()
 
   assert l == [3, 8, 5, 12, 17, 15, 10]
+
+
+def test_contains_bst():
+
+  bst = BinarySearchTree()
+  
+  bst.add(10)
+  bst.add(15)
+  bst.add(5)
+  bst.add(8)
+  bst.add(3)
+  bst.add(12)
+  bst.add(17)
+
+  assert bst.contains(10) is True
+  assert bst.contains(8) is True
+  assert bst.contains(3) is True
+  assert bst.contains(17) is True
+  assert bst.contains(30) is False
