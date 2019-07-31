@@ -3,11 +3,14 @@ def breadth_tree(tree):
 
   queue.enqueue(tree.root)
 
+  list = []
+
   while queue.head:
 
     tNode = queue.head.value
 
-    print('tNode.value:', tNode.value)
+    list.append(tNode.value)
+
     if(tNode.left):
       print('left')
       queue.enqueue(tNode.left)
@@ -18,7 +21,7 @@ def breadth_tree(tree):
 
     queue.dequeue()
 
-  return
+  return list
 
 #############################################################
 #                                                           #
