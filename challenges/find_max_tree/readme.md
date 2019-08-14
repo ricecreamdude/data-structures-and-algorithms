@@ -12,3 +12,4 @@ a value that is higher than the saved max value, it is updated.
 ## Solution
 <!-- Embedded whiteboard image -->
 ![Find Max Tree](findMaxTree.jpg?raw=true "Title")
+
