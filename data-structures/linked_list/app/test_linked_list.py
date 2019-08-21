@@ -1,4 +1,4 @@
-from app.linked_list import *
+from linked_list import *
 
 #Can successfully instantiate an empty linked list
 def test_linked_list_init():  
@@ -255,4 +255,3 @@ def test_insert_node_at_end():
   ll.insertAfter('elephant', 'dog')
 
   assert ll.__str__() == 'The list contains apple, buffalo, cat, dog, and elephant.' 
-
