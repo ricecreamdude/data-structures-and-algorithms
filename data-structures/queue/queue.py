@@ -1,41 +1,41 @@
 class Queue:
   def __init__(self):
     self.head = None
-    self.length = 0
 
   def enqueue(self, value):
 
-    if self.head is None:
-      self.head = Node(value)
-      self.length += 1
-      return 'Added node to queue' 
+    newNode = queueNode(value)
+    node = self.head
 
-    newNode = Node(value)
-    next = self.head.next
+    if node is None:
+      self.head = newNode
+      return 'new value added to head'
 
-    newNode.next = next  
-    self.head = newNode
+    #Navigate to the end of the queue
+    while node.next:
+      node = node.next
+      
+    #Add the new queue node to the end of the queue
+    node.next = newNode
 
-    return 'Added node to queue'
+    return 'Added node to queue' 
 
   def dequeue(self):
 
     #move to last value in the list
     #Remove reference to the last value so it is garbage collected
-    endReached = False
     
-    if(self.length > 0):
+    if self.head:
       current = self.head
-      next = current.next
-      while endReached == False:
-        if(next.next == None):
-          current.next = None
-          endReached == True
-          self.length -=1
-        current = current.next  
+      next = None
+      
+      if current.next:
         next = current.next
-      return f"Removed node {next} from the queue"
-    
+
+      self.head = next
+
+      return current.value
+          
     return 'The queue is empty, nothing removed'
 
   def peek(self):
