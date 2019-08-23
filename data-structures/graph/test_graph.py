@@ -40,17 +40,6 @@ def test_add_edge_to_graph():
 
   assert g.vertices[0].neighbors[0] == {banana, 50}
 
-def test_add_edge_to_graph():
-
-  g = Graph()
-
-  apple = g.addVertex('apple')
-  banana = g.addVertex('banana')
-
-  g.addEdge(apple, banana, 50)
-
-  assert g.vertices[0].neighbors[0] == {banana, 50}
-
 def test_add_edge_to_graph_doesnt_add_non_existant():
 
   g = Graph()
