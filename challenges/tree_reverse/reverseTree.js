@@ -1,12 +1,11 @@
+/* Tree A
+        A
+      /   \
+    B      E
+  /   \
+ C    D
 
-
-
-
-
-
-
-
-
+*/
 class Tree{
   constructor(node){
     this.root = node;
@@ -21,14 +20,6 @@ class Node{
   }
 }
 
-/* Tree A
-        A
-      /   \
-    B      E
-  /   \
- C    D
-
-*/
 
 let nodeA = new Node('A')
 let nodeB = new Node('B')
@@ -47,8 +38,8 @@ nodeB.right = nodeD
     E      B
          /   \
         D      C
-
 */
+
 let nodeAy = new Node('A')
 let nodeBe = new Node('B')
 let nodeCe = new Node('C')
@@ -60,8 +51,44 @@ nodeAy.right = nodeBe;
 nodeBe.left = nodeDe;
 nodeBe.right = nodeCe;
 
-let treeA = new Tree(nodeA);
-let treeB = new Tree(nodeAy);
+function checkIfReverse(nodeA, nodeB){
 
-console.log('TREE A:', treeA);
-console.log('TREE B:', treeB);
+  let isReverse = true;
+
+  function traverse(nodeA, nodeB){
+    if(nodeA.value !== nodeB.value){
+      console.log('MISMATCHED VALUES');
+      return isReverse = false;
+    }
+    if(nodeA.left){
+      if(nodeB.right){
+        traverse(nodeA.left, nodeB.right);
+      } else {
+        console.log('NODE A LEFT DOES NOT MATCH NODE B RIGHT')
+        return isReverse = false;
+      }
+    }
+    if(nodeA.right){
+      if(nodeB.left){
+        traverse(nodeA.right, nodeB.left);
+      } else {
+        console.log('NODE A RIGHT DOES NOT MATCH NODE B LEFT')
+        return isReverse = false;
+      }
+    }
+  }
+
+  traverse(nodeA, nodeAy);
+
+  return isReverse;
+
+};
+
+console.log('RESULT:',checkIfReverse(nodeA, nodeB) )
+
+
+
+
+
+
+
