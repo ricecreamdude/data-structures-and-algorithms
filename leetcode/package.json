@@ -1,0 +1,11 @@
+{
+  "name": "ls",
+  "version": "1.0.0",
+  "description": "NPM package for testing/checking leetcode challenges",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC"
+}
