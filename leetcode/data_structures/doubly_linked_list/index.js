@@ -1,4 +1,4 @@
-class DoublyLinkedList{
+ class DoublyLinkedList{
 
   /* @param {number} capacity */
   constructor(capacity){
@@ -21,8 +21,6 @@ class DoublyLinkedList{
     this.head = newNode
   }
 
-
-
 }
 
 class Node{
@@ -43,3 +41,8 @@ test.addToFront(testNode);
 test.addToFront(testNodeTwo);
 
 console.log(test)
+
+module.exports = {
+  Node,
+  DoublyLinkedList
+}
