@@ -1,6 +1,6 @@
 # Array.forEach
 
-THIS IS A CODE FELLOWS ASSIGNMENT THAT I AM INSTALLING TO HELP WITH GRADING
+THIS IS A CODE FELLOWS ASSIGNMENT THAT I AM INSTALLING TO HELP WITH GRADING.
 
 ## Overview
 `Array.forEach` allows you to iterate through an array. Where a normal `for` loop is "iterative", forEach is more declarative or functional in nature.
